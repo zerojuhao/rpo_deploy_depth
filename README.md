@@ -146,7 +146,7 @@ To facilitate debugging without an Ethernet cable and monitor, a WiFi Access Poi
 
 Before connecting, please complete the motor ID setup and configure the IMU baud rate and frequency.
 
-For the **motor ID**, please refer to the motor ID definition in [RoboParty Roboto Origin Product Installation Manual](https://roboparty.feishu.cn/wiki/Sh5vw7QFZimO5Skxzficro2Pnkf), and use the Damiao host computer tool to set it. For tutorials, please see [Damiao Technology Docs](https://gitee.com/kit-miao/damiao-document).
+For the **motor ID**, please refer to the motor ID definition in [RoboParty Roboto Origin Product Installation Manual](https://roboparty.feishu.cn/wiki/OiO2wF4NiiE08Yk1yJjcgnumnUw), and use the Damiao host computer tool to set it. For tutorials, please see [Damiao Technology Docs](https://gitee.com/kit-miao/damiao-document).
 
 For the **IMU**, we use **`921600` baud rate** and **`500HZ` frequency** by default. How to modify it using the host computer, see the [HiPNUC Product Manual](https://www.hipnuc.com/resource_hi14.html).
 > **Tip**: Other baud rates can also be used, but please **ensure the frequency is greater than 200HZ**. If a different baud rate is used, synchronously modify the IMU configuration in `src/inference/config/robot.yaml`.
@@ -159,7 +159,7 @@ The default CAN mapping relationship for motor drivers is as follows (numbered i
 - **`can2`** corresponds to **Left hand**
 - **`can3`** corresponds to **Right hand**
 
-> **Recommendation**: Plug the USB-to-CAN into the **USB 3.0 interface** of the controller. If using a USB hub, please also use a 3.0 interface hub and plug it into a 3.0 interface; IMU and gamepad can be plugged into USB 2.0 interfaces. For specific details, refer to [RoboParty Roboto Origin Wiring Instructions (Public)](https://roboparty.feishu.cn/wiki/QeY2wozbiiIivlkBfdccvqVlnog).
+> **Recommendation**: Plug the USB-to-CAN into the **USB 3.0 interface** of the controller. If using a USB hub, please also use a 3.0 interface hub and plug it into a 3.0 interface; IMU and gamepad can be plugged into USB 2.0 interfaces. For specific details, refer to [RoboParty Roboto Origin Wiring Instructions](https://roboparty.feishu.cn/wiki/QeY2wozbiiIivlkBfdccvqVlnog).
 
 ### Method 1: Manual Configuration (Not Recommended)
 If you don't configure udev rules, you need to firmly follow the order above to insert USB-to-CAN, and after inserting the IMU, manually configure the CAN and IMU serial ports:
@@ -175,7 +175,7 @@ sudo chmod 666 /dev/ttyUSB0
 ```
 
 ### Method 2: Use udev rules for automatic binding (Recommended)
-Write udev rules to physically bind USB interfaces to corresponding devices, so **you don't need to insert devices in order**. We provide examples `99-auto-up-devs-orangepi.rules` and `99-auto-up-devs-sunrise.rules`. If your wiring is exactly the same as [RoboParty Roboto Origin Wiring Instructions (Public)](https://roboparty.feishu.cn/wiki/QeY2wozbiiIivlkBfdccvqVlnog), you can use them directly.
+Write udev rules to physically bind USB interfaces to corresponding devices, so **you don't need to insert devices in order**. We provide examples `99-auto-up-devs-orangepi.rules` and `99-auto-up-devs-sunrise.rules`. If your wiring is exactly the same as [RoboParty Roboto Origin Wiring Instructions](https://roboparty.feishu.cn/wiki/QeY2wozbiiIivlkBfdccvqVlnog), you can use them directly.
 
 If the wiring is inconsistent, you need to modify the `KERNELS` item in the file to correspond to the actually bound USB interface. Enter the following instruction on the controller to monitor USB events:
 
@@ -247,7 +247,7 @@ python3 scripts/set_zero.py
 
 ### Start Software
 
-> **Warning**: Before starting the robot, ensure the robot has completed zero point calibration. **Please be sure to read [RoboParty Roboto Origin Safety Operation Guide](https://roboparty.feishu.cn/wiki/H5gPwIH0qiBMnykEt4UcUYV7nAe) first.**
+> **Warning**: Before starting the robot, ensure the robot has completed zero point calibration. **Please be sure to read [RoboParty Roboto Origin Safety Operation Guide](https://roboparty.feishu.cn/wiki/ZGtnwpHCjii2XykBYMGchoBBnSl) first.**
 
 Additionally, pay special attention to the zero point offset configuration in `src/inference/config/robot.yaml`:
 

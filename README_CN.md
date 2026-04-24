@@ -146,7 +146,7 @@
 
 在连接之前，请先完成对电机 ID 和 IMU 波特率以及频率的设置。
 
-对于 **电机 ID**，请参见 [产品安装手册](https://roboparty.feishu.cn/wiki/Sh5vw7QFZimO5Skxzficro2Pnkf) 中对电机 ID 的定义，并使用达妙上位机工具进行设置，使用教程参见 [达妙科技文档](https://gitee.com/kit-miao/damiao-document)。
+对于 **电机 ID**，请参见 [产品安装手册](https://roboparty.feishu.cn/wiki/OiO2wF4NiiE08Yk1yJjcgnumnUw) 中对电机 ID 的定义，并使用达妙上位机工具进行设置，使用教程参见 [达妙科技文档](https://gitee.com/kit-miao/damiao-document)。
 
 对于 **IMU**，我们默认使用 **`921600` 波特率** 与 **`500HZ` 频率**。如何使用上位机进行修改参见 [HiPNUC 产品手册](https://www.hipnuc.com/resource_hi14.html)。
 > **提示**：也可以使用其他波特率，但请 **保证频率大于 200HZ**。若使用其他波特率，请同步修改 `src/inference/config/robot.yaml` 中的 IMU 配置。
@@ -247,7 +247,7 @@ python3 scripts/set_zero.py
 
 ### 启动软件
 
-> **警告**：启动机器人前，确保机器人完成零点标定，**请务必阅读 [安全操作指南](https://roboparty.feishu.cn/wiki/H5gPwIH0qiBMnykEt4UcUYV7nAe)！**
+> **警告**：启动机器人前，确保机器人完成零点标定，**请务必阅读 [安全操作指南](https://roboparty.feishu.cn/wiki/ZGtnwpHCjii2XykBYMGchoBBnSl)！**
 
 此外，请特别注意 `src/inference/config/robot.yaml` 中的零点偏移配置：
 
