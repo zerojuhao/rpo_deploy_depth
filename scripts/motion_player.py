@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import sys
-import os
 import time
 import logging
 import argparse
@@ -8,7 +7,6 @@ import numpy as np
 import robot_py
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger("MotionPlayer")
 
 class MotionLoader:
     def __init__(self, motion_file: str, logger, usd2urdf: bool = False):
