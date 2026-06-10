@@ -11,7 +11,7 @@
 
 This repository provides a deployment framework using ROS2 as middleware with a modular architecture for seamless customization and extension.
 
-Open-source repository: [https://github.com/Roboparty/atom01_deploy](https://github.com/Roboparty/atom01_deploy)
+Open-source repository: [https://github.com/zerojuhao/rpo_deploy_depth](https://github.com/zerojuhao/rpo_deploy_depth)
 
 **Maintainer**: Zhihao Liu
 **Contact**: <ZhihaoLiu_hit@163.com>
@@ -56,9 +56,8 @@ For controller connection methods and related resources, see [Orange Pi 5 Plus W
 5. Next, clone the deployment code:
 
    ```bash
-   git clone https://github.com/Roboparty/atom01_deploy.git
-   cd atom01_deploy
-   git submodule update --init --recursive
+   git clone https://github.com/zerojuhao/rpo_deploy_depth.git
+   cd rpo_deploy_depth
    ```
 
 6. If using Orange Pi 5 Plus, execute the following instructions to install the **5.10 real-time kernel**:
