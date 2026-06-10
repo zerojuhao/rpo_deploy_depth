@@ -1,0 +1,55 @@
+inference_node:
+    ros__parameters:
+        model_names: ["policy.onnx"]
+        obs_layouts:
+          - "ang_vel:3, gravity_b:3, cmd_vel:3, dof_pos:23, dof_vel:23, last_action:23"
+        frame_stacks: [10]
+        obs_stack_orders: ["frame_major"]
+        act_alpha: 1.0
+        joint_num: 23
+        decimation: 5
+        intra_threads: 1
+        dt: 0.004
+        obs_scales_lin_vel: 1.0
+        obs_scales_ang_vel: 1.0
+        obs_scales_dof_pos: 1.0
+        obs_scales_dof_vel: 1.0
+        obs_scales_gravity_b: 1.0
+        clip_observations: 100.0
+        action_scale: 0.25
+        clip_actions: 100.0
+        usd2urdf: [0, 6, 12, 1, 7, 13, 18, 2, 8, 14, 19, 3, 9, 15, 20, 4, 10, 16, 21, 5, 11, 17, 22]
+        clip_cmd: 
+            [-0.4, 0.6,
+             -0.4, 0.4,
+             -0.8, 0.8]
+        joint_default_angle: 
+            [0.0, 0.0, -0.1, 0.3, -0.2, 0.0,
+             0.0, 0.0, -0.1, 0.3, -0.2, 0.0, 0.0,
+             0.18, 0.06, 0.0, 0.78, 0.0,
+             0.18, -0.06, 0.0, 0.78, 0.0]
+        joint_limits: 
+            [-1.0, 0.6,
+             -0.6, 1.0,
+             -1.57, 1.57,
+             -0.2, 2.5,
+             -0.6, 0.6,
+             -0.5, 0.5,
+             -0.6, 1.0,
+             -1.0, 0.6,
+             -1.57, 1.57,
+             -0.2, 2.5,
+             -0.6, 0.6,
+             -0.5, 0.5,
+             -3.14, 3.14,
+             -3.14, 1.57,
+             -0.25, 3.14,
+             -1.57, 1.57,
+             -0.6, 1.57,
+             -1.57, 1.57,
+             -3.14, 1.57,
+             -3.14, 0.25,
+             -1.57, 1.57,
+             -0.6, 1.57,
+             -1.57, 1.57]
+        gravity_z_upper: -0.5

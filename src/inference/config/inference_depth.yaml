@@ -1,0 +1,85 @@
+inference_node:
+    ros__parameters:
+        use_depth: true
+        depth_obs_topic: "/depth_obs"
+        model_names: ["actor.onnx"]
+        obs_layouts:
+          - "ang_vel:3, gravity_b:3, cmd_vel:3, dof_pos:23, dof_vel:23, last_action:23"
+        extra_obs_layouts:
+          - "perception:128"
+        frame_stacks: [8]
+        obs_stack_orders: ["obs_major"]
+        act_alpha: 1.0
+        joint_num: 23
+        decimation: 5
+        intra_threads: 1
+        dt: 0.004
+        obs_scales_lin_vel: 1.0
+        obs_scales_ang_vel: 0.25
+        obs_scales_dof_pos: 1.0
+        obs_scales_dof_vel: 0.05
+        obs_scales_gravity_b: 1.0
+        clip_observations: 100.0
+        action_scale: 0.25
+        clip_actions: 100.0
+        usd2urdf: [0, 6, 12, 1, 7, 13, 18, 2, 8, 14, 19, 3, 9, 15, 20, 4, 10, 16, 21, 5, 11, 17, 22]
+        clip_cmd:
+            [-0.0, 0.6,
+             -0.0, 0.0,
+             -1.5, 1.5]
+        joint_default_angle:
+            [0.0, 0.0, -0.1, 0.3, -0.2, 0.0,
+             0.0, 0.0, -0.1, 0.3, -0.2, 0.0, 0.0,
+             0.18, 0.06, 0.0, 0.78, 0.0,
+             0.18, -0.06, 0.0, 0.78, 0.0]
+        joint_limits:
+            [-3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14,
+             -3.14, 3.14]
+        gravity_z_upper: -0.5
+
+depth_node:
+    ros__parameters:
+        depth_topic: "/camera/camera/depth/image_rect_raw"
+        depth_obs_topic: "/depth_obs"
+        use_depth_encoder: true
+        depth_encoder_model_name: "0-depth_encoder.onnx"
+        depth_encoder_output_dim: 128
+        frame_stack: 8
+        intra_threads: 1
+        debug_vis: true
+        debug_depth_vis_topic: "/debug_depth_vis"
+        depth_use_bilinear: true
+        depth_input_width: 640
+        depth_input_height: 360
+        depth_width: 64
+        depth_height: 36
+        depth_crop_up: 18
+        depth_crop_down: 0
+        depth_crop_left: 16
+        depth_crop_right: 16
+        depth_history_length: 37
+        depth_history_skip_frames: 5
+        depth_delay_frames: 0
+        depth_min_distance: 0.0
+        depth_max_distance: 2.5
