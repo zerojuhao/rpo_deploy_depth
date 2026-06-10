@@ -286,6 +286,16 @@ screen -S inference_session -X quit
 screen -S joy_session -X quit
 ```
 
+### Parkour Deployment
+
+This repository supports depth-camera-based Parkour deployment. To start the Parkour program, run:
+
+```bash
+./tools/start_robot_depth.sh
+```
+
+Configuration files are located in `src/inference/config/`. The Parkour deployment config is `src/inference/config/inference_depth.yaml`.
+
 If you need to switch to a different policy model, first update the config file loaded by `src/inference/launch/inference.launch.py`:
 
 ```python

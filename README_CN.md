@@ -286,6 +286,16 @@ screen -S inference_session -X quit
 screen -S joy_session -X quit
 ```
 
+### Parkour 部署
+
+本仓库支持基于深度相机的 Parkour 部署功能。启动 Parkour 程序：
+
+```bash
+./tools/start_robot_depth.sh
+```
+
+配置文件位于 `src/inference/config/` 目录下。Parkour 部署的配置文件为 `src/inference/config/inference_depth.yaml`。
+
 如果需要切换不同的策略模型，可以先修改 `src/inference/launch/inference.launch.py` 中加载的配置文件：
 
 ```python
