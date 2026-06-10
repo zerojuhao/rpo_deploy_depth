@@ -27,6 +27,16 @@
 ./tools/start_robot_depth.sh
 ```
 
+## RealSense 配置
+
+本项目使用的深度相机为 **Intel RealSense D435i**。按照 [realsense-ros (ros2-master)](https://github.com/realsenseai/realsense-ros/tree/ros2-master) 的指导安装并配置 ROS2 驱动。
+
+启动 RealSense 节点：
+
+```bash
+ros2 launch realsense2_camera rs_launch.py
+```
+
 ## 配置文件
 
 配置文件位于 `src/inference/config/` 目录下。主要文件：
@@ -35,4 +45,3 @@
 |---|---|
 | `inference_depth.yaml` | Parkour 部署配置 |
 | `robot.yaml` | 硬件配置（电机、IMU、CAN 等） |
-| `realsense.yaml` | RealSense 深度相机设置 |

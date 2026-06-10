@@ -27,6 +27,16 @@ This repository adds depth-camera-based Parkour deployment. To start the Parkour
 ./tools/start_robot_depth.sh
 ```
 
+## RealSense Setup
+
+This project uses the **Intel RealSense D435i** depth camera. Follow the guide at [realsense-ros (ros2-master)](https://github.com/realsenseai/realsense-ros/tree/ros2-master) to install and configure the ROS2 driver.
+
+Launch the RealSense node:
+
+```bash
+ros2 launch realsense2_camera rs_launch.py
+```
+
 ## Configuration
 
 Configuration files are located in `src/inference/config/`. Key files:
@@ -35,4 +45,3 @@ Configuration files are located in `src/inference/config/`. Key files:
 |---|---|
 | `inference_depth.yaml` | Parkour deployment configuration |
 | `robot.yaml` | Hardware configuration (motors, IMU, CAN, etc.) |
-| `realsense.yaml` | RealSense depth camera settings |
